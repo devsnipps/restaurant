@@ -1,0 +1,17 @@
+<div class="container">
+<div class="header clearfix">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <li role="presentation"><a href="#">Home</a></li>
+      <li role="presentation"><a href="/about_us">About</a></li>
+      <li role="presentation"><a href="/contact_us">Contact</a></li>
+      
+      <% if current_user %>
+      	<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li role="presentation"><a href="/restaurants/new">New Restaurant</a></li>
+      <% end %>
+    </ul>
+  </nav>
+  <h3 class="text-muted"><a href="/">Foodback</a></h3>
+</div>

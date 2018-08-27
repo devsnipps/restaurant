@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+<%= form_for @restaurant do |f| %>
+
+	<div class="row">
+        <div class="col-sm-6 form-group">
+	        <%= f.label :name, for: "name" %>
+			<%= f.text_field :name, class: "form-control", placeholder: "Name of restaurant" %>
+            
+        </div>
+        <div class="col-sm-6 form-group">
+           
+    		<%= f.label :phone, for: "Phone" %>
+			<%= f.text_field :phone, class: "form-control", placeholder: "Phone" %>
+               
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6 form-group">
+	        <%= f.label :address1, for: "Address 1" %>
+			<%= f.text_area :address1, class: "form-control", placeholder: "Address 1" %>
+            
+        </div>
+        <div class="col-sm-6 form-group">
+           
+    		<%= f.label :address2, for: "address2" %>
+			<%= f.text_area :address2, class: "form-control", placeholder: "Address 2" %>
+               
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 form-group">
+	        <%= f.label :description, for: "Description" %>
+			<%= f.text_area :description, class: "form-control", placeholder: "Description" %>
+            
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-12 form-group">
+	        <%= f.label :Catgeory, for: "Catgeory" %>
+			<%= f.select :category_id, Category.all.map { |f| [f.name, f.id ]},{class: "form-control"}  %>
+            
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+	        <%= f.label :state, for: "State" %>
+			<%= f.text_field :state, class: "form-control", placeholder: "State" %>
+            
+        </div>
+        <div class="col-sm-6 form-group">
+           
+    		<%= f.label :city, for: "City" %>
+			<%= f.text_field :city, class: "form-control", placeholder: "City" %>
+               
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 form-group">
+	        <%= f.label :zipcode, for: "zipcode" %>
+			<%= f.text_field :zipcode, class: "form-control", placeholder: "zipcode" %>
+            
+        </div>
+        <div class="col-sm-6 form-group">
+           
+    		<%= f.label :email, for: "Email" %>
+			<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+               
+        </div>
+    </div>
+
+
+	
+	<div class="field">
+		
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+	</div>
+	
+<% end %>
+
+
+</div>
+</div>
+
+<br><br>

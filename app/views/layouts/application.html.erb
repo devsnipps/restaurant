@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foodback</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+  <%= render 'layouts/nav' %>
+  <%= render 'layouts/messages' %>
+    <%= yield %>
+  <%= render 'layouts/footer' %>
+
+  <script type="text/javascript">
+    $('.star-rating').raty({
+      path: '/assets',
+      readOnly: true,
+      score: function (){
+        return $(this).attr('data-score');
+      }
+    });
+  </script>
+  </body>
+</html>
