@@ -4,14 +4,14 @@ class Restaurant < ActiveRecord::Base
 
 	validates_presence_of :name, :description, :city, :state
 
-	#geocoded_by :full_address
+	geocoded_by :full_address
 
-	#after_validation :geocode
+	after_validation :geocode
 
-	#def full_address
-	#	[address1, address2, city, state, zipcode].join(', ')
-    #
-	#end
+	def full_address
+		[address1, address2, city, state, zipcode].join(', ')
+    
+	end
 
 	def self.search(params)
 		restaurants = Restaurant.where(category_id: params[:category].to_i)

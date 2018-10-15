@@ -2,16 +2,16 @@ class RestaurantsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 	before_action :is_admin?, only: [:edit, :update, :destroy]
 	def index
-		#visitor location locally wont work
-		#visitor_location = request.location.latitude
-		#visitor_longitude = request.location.longitude
-		#we need to hard code lat and logitudes ....
+		visitor location locally wont work
+		visitor_location = request.location.latitude
+		visitor_longitude = request.location.longitude
+		we need to hard code lat and logitudes ....
 
-		#visitor_latitude = 44.5555
-		#visitor_longitude = -93.34564
+		visitor_latitude = 44.5555
+		visitor_longitude = -93.34564
 
-		# @restaurants = Restaurant.near([visitor_latitude, visitor_longitude], 20)
-		# @italin_resta = Restaurant.where(category_id: 6).near([visitor_latitude, visitor_longitude], 20)
+		@restaurants = Restaurant.near([visitor_latitude, visitor_longitude], 20)
+		@italin_resta = Restaurant.where(category_id: 6).near([visitor_latitude, visitor_longitude], 20)
 
 
 		@restaurants = Restaurant.all
